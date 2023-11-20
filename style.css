@@ -3,16 +3,24 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   padding: 0;
+}
+
+.container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  gap: 120px;
-  min-height: 100vh;
 }
 
 h1 {
   color: white;
+  margin-bottom: 32px;
+  font-size: 32px;
+}
+
+main h1 {
+  text-align: center;
+  height: 32px;
 }
 
 table {
@@ -30,9 +38,11 @@ td {
 }
 
 td:hover {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
+  transition: 0.75s;
 }
+
 
 tr:first-child td {
   border-top: none;
@@ -48,4 +58,38 @@ tr td:first-child {
 
 tr td:last-child {
   border-right: none;
+}
+
+.circle {
+  background-color: rgba(173, 216, 230, 0.2);
+  color: lightblue;
+}
+
+.cross {
+  background-color: rgba(255, 191, 0, 0.2);
+  color: #ffbf00;
+}
+
+i.circle {
+  color: lightblue;
+  background-color: unset;
+}
+
+i.cross {
+  color: #ffbf00;
+  background-color: unset;
+}
+
+button {
+  margin-top: 40px;
+  padding: 8px;
+  width: 300px;
+  border: none;
+  font-size: 20px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: lightblue;
+  transition: 0.75s;
 }
