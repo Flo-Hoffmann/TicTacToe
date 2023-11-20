@@ -6,7 +6,8 @@ function init() {
 
 // Funktion zum Rendern der Tabelle
 function render() {
-  const currentPlayer = fields.filter((field) => field).length % 2 === 0 ? "circle" : "cross";
+  const currentPlayer =
+    fields.filter((field) => field).length % 2 === 0 ? "circle" : "cross";
 
   // Zugriff auf das Hauptelement
   const content = document.getElementById("content");
@@ -57,10 +58,6 @@ function render() {
   <span id="text"> is next!</span>
 </h1>`;
   content.appendChild(table);
-
-  
-  
-
 }
 
 // Function triggered when a cell is clicked
