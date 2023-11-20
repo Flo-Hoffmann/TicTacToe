@@ -1,12 +1,12 @@
 let fields = [
-  "cross",
-  "circle",
-  "cross",
-  null,
-  "circle",
   null,
   null,
-  "cross",
+  null,
+  null,
+  null,
+  null,
+  null,
+  null,
   null,
 ];
 
@@ -37,8 +37,8 @@ function render() {
       if (fields[index] === "cross") {
         cell.innerHTML =
           '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">' +
-          '<line x1="2" y1="2" x2="22" y2="22" stroke="yellow" stroke-width="4" />' +
-          '<line x1="2" y1="22" x2="22" y2="2" stroke="yellow" stroke-width="4" />' +
+          '<line x1="2" y1="2" x2="22" y2="22" stroke="#FFC000" stroke-width="4" />' +
+          '<line x1="2" y1="22" x2="22" y2="2" stroke="#FFC000" stroke-width="4" />' +
           "</svg>";
       } else if (fields[index] === "circle") {
         cell.innerHTML =
@@ -48,7 +48,7 @@ function render() {
       }
 
       // Add a click event handler
-      cell.addEventListener("click", () => onCellClick(index));
+      cell.setAttribute('onclick', `onCellClick(${index})`);
 
       // Add the cell to the row
       row.appendChild(cell);
@@ -63,6 +63,23 @@ function render() {
   content.appendChild(table);
 }
 
+// Function triggered when a cell is clicked
 function onCellClick(index) {
-  render();
+  // Check if the clicked cell is empty
+  if (!fields[index]) {
+
+    // Determine the current player based on the count of non-empty fields:
+    // If the count of non-empty fields is even, assign 'circle'; otherwise, assign 'cross'.
+    const currentPlayer = fields.filter(field => field).length % 2 === 0 ? 'circle' : 'cross';
+
+    // Set the current player's marker in the clicked cell
+    fields[index] = currentPlayer;
+
+    // Remove the onclick attribute to prevent further clicks on the cell
+    const cell = document.querySelectorAll('td')[index];
+    cell.removeAttribute('onclick');
+
+    // Re-render the table to reflect the updated state
+    render();
+  }
 }
