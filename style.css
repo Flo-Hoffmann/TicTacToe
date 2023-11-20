@@ -1,3 +1,20 @@
+body {
+  background-color: #323232;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 120px;
+  min-height: 100vh;
+}
+
+h1 {
+  color: white;
+}
+
 table {
   border-collapse: collapse;
   width: 300px;
@@ -5,9 +22,25 @@ table {
 }
 
 td {
-  border: 1px solid #000;
+  border: 5px solid white;
   width: 100px;
   height: 100px;
   text-align: center;
   font-size: 24px;
+}
+
+tr:first-child td {
+  border-top: none;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+tr td:first-child {
+  border-left: none;
+}
+
+tr td:last-child {
+  border-right: none;
 }

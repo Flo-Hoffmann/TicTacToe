@@ -37,13 +37,13 @@ function render() {
       if (fields[index] === "cross") {
         cell.innerHTML =
           '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">' +
-          '<line x1="2" y1="2" x2="22" y2="22" stroke="black" stroke-width="2" />' +
-          '<line x1="2" y1="22" x2="22" y2="2" stroke="black" stroke-width="2" />' +
+          '<line x1="2" y1="2" x2="22" y2="22" stroke="yellow" stroke-width="4" />' +
+          '<line x1="2" y1="22" x2="22" y2="2" stroke="yellow" stroke-width="4" />' +
           "</svg>";
       } else if (fields[index] === "circle") {
         cell.innerHTML =
           '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="50" height="50">' +
-          '<circle cx="12" cy="12" r="10" fill="none" stroke="black" stroke-width="2" />' +
+          '<circle cx="12" cy="12" r="10" fill="none" stroke="lightblue" stroke-width="4" />' +
           "</svg>";
       }
 
